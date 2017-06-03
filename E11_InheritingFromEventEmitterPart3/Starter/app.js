@@ -1,22 +1,5 @@
-var EventEmitter = require('events');
-var util = require('util');
+const Greetr = require('./greeter')
 
-function Greetr() {
-	EventEmitter.call(this);
-	this.greeting = 'Hello world!';
-}
+let greeter1 = new Greetr
 
-util.inherits(Greetr, EventEmitter);
-
-Greetr.prototype.greet = function(data) {
-	console.log(this.greeting + ': ' + data);
-	this.emit('greet', data);
-}
-
-var greeter1 = new Greetr();
-
-greeter1.on('greet', function(data) {
-	console.log('Someone greeted!: ' + data);
-});
-
-greeter1.greet('Tony');
+greeter1.greet('Frankie');
